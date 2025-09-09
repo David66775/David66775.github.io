@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div id="g_id_onload"
+         data-client_id="388178945006-hrcivhmhbh0kk88ta6aa3vdkctjhmfeo.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="signin_with"
+         data-shape="rect"
+         data-logo_alignment="left">
+    </div>
+
+    <script>
+      const allowedUsers = [
+        "davidjkeesling@gmail.com",
+      ];
+
+      function handleCredentialResponse(response) {
+        const data = JSON.parse(atob(response.credential.split('.')[1]));
+        console.log("User info:", data);
+
+        if (allowedUsers.includes(data.email)) {
+          document.body.innerHTML += `<p>✅ Welcome, ${data.name}!</p>`;
+        } else {
+          document.body.innerHTML += `<p><b>403.</b> That’s an error. Not authorized.</p>`;
+        }
+      }
+    </script>
+  </body>
+</html>
