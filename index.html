@@ -22,7 +22,7 @@
     <script>
       const allowedUsers = [
         "davidjkeesling@gmail.com",
-        "e4214389@gmail.com",
+        "",
       ];
 
       function handleCredentialResponse(response) {
@@ -30,7 +30,7 @@
         console.log("User info:", data);
 
         if (allowedUsers.includes(data.email)) {
-          document.body.innerHTML += `<p>✅ Welcome, ${data.name}!</p>`;
+          document.body.innerHTML += `<p>Welcome, ${data.name}!</p>`;
         } else {
           document.body.innerHTML += `<p><b>403.</b> That’s an error. Not authorized.</p>`;
         }
