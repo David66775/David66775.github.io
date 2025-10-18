@@ -5,6 +5,15 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
+    <h1>Welcome to my github sites.</h1>
+    <h2>games</h2>
+      <a href = "david66775.github.io/pong">Pong</a>
+      
+    <h2>the manager (handles passwords in a special way)</h2>
+    <details>
+      <summary>read more</summary>
+      <p>the manager is a tab that needs to always be open, but be in the "locked" state, where it nees a password entered.</p>
+    </details>
     <div id="g_id_onload"
          data-client_id="388178945006-hrcivhmhbh0kk88ta6aa3vdkctjhmfeo.apps.googleusercontent.com"
          data-callback="handleCredentialResponse"
@@ -12,7 +21,7 @@
     </div>
     <div class="g_id_signin"
          data-type="standard"
-         data-size="small"
+         data-size="large"
          data-theme="outline"
          data-text="signin_with"
          data-shape="rect"
@@ -29,7 +38,7 @@
         console.log("User info:", data);
 
         if (allowedUsers.includes(data.email)) {
-          document.body.innerHTML += '<p>Welcome, ${data.name}!</p><button onclick = &;quotwelcome()&;quot>Come on in.</button>';
+          document.body.innerHTML += '<p>welcome, ${data.name}! you are authorized, so come on to the <a>admin page</a></p>';
         } else {
           document.body.innerHTML += '<p><b>403.</b> That’s an error. Not authorized.</p>';
         }
